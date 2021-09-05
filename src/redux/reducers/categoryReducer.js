@@ -20,11 +20,13 @@ function categoryReducer(state = INITIAL_STATE, action) {
   case REQUEST_CATEGORIES_SUCCESS:
     return {
       ...state,
+      loading: false,
       categories: [...action.payload]
     }
   case REQUEST_CATEGORIES_ERROR:
     return {
       ...state,
+      loading: false,
       error: action.payload
     }
   default:
